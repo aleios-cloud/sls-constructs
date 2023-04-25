@@ -1,7 +1,9 @@
-*.js
-!jest.config.js
-*.d.ts
+# Package directories
 node_modules
+.npm
+
+# Esbuild directories
+.esbuild
 
 # CDK asset staging directory
 .cdk.staging
@@ -9,3 +11,6 @@ cdk.out
 
 # macOS system files
 .DS_Store
+
+# local env
+.env
