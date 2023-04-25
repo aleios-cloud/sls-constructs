@@ -1,0 +1,23 @@
+{
+  "unversionedId": "S3Buckets/bucket-security",
+  "id": "S3Buckets/bucket-security",
+  "title": "Security",
+  "description": "AWS Documentation for S3 Best Practices",
+  "source": "@site/docs/S3Buckets/bucket-security.md",
+  "sourceDirName": "S3Buckets",
+  "slug": "/S3Buckets/bucket-security",
+  "permalink": "/docs/S3Buckets/bucket-security",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/S3Buckets/bucket-security.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Translate your site",
+    "permalink": "/docs/tutorial-extras/translate-your-site"
+  }
+}

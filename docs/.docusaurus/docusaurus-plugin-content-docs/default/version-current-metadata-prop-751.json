@@ -1,0 +1,40 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "link",
+        "label": "What is this?",
+        "href": "/docs/intro",
+        "docId": "intro"
+      },
+      {
+        "type": "link",
+        "label": "S3 Buckets",
+        "href": "/docs/S3Buckets",
+        "docId": "S3Buckets"
+      }
+    ]
+  },
+  "docs": {
+    "intro": {
+      "id": "intro",
+      "title": "What is this?",
+      "description": "This Docusaurus should help explain some of the best practices we have built around the constructs we use at aleios. Please andon your archi or reach out to Luke Yianni if you have any questions!",
+      "sidebar": "tutorialSidebar"
+    },
+    "S3Buckets": {
+      "id": "S3Buckets",
+      "title": "S3 Buckets",
+      "description": "For all the best practices we've checked for, the documentation can be found here: AWS Documentation for S3 Best Practices",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}

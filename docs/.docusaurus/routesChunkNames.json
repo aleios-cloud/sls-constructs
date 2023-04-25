@@ -1,0 +1,74 @@
+{
+  "/__docusaurus/debug-4ef": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    }
+  },
+  "/__docusaurus/debug/config-ba0": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    }
+  },
+  "/__docusaurus/debug/content-a41": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    },
+    "allContent": "allContent---docusaurus-debug-content-246-9aa"
+  },
+  "/__docusaurus/debug/globalData-d0f": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    }
+  },
+  "/__docusaurus/debug/metadata-8f8": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    }
+  },
+  "/__docusaurus/debug/registry-806": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    }
+  },
+  "/__docusaurus/debug/routes-683": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debug-62-f-9c4"
+    }
+  },
+  "/markdown-page-568": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---markdown-page-4-ff-8ed"
+    },
+    "content": "content---markdown-page-393-028"
+  },
+  "/docs-67b": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---docs-9-f-1-da8"
+    },
+    "versionMetadata": "versionMetadata---docs-935-398"
+  },
+  "/docs/intro-aed": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
+  },
+  "/docs/S3Buckets-a9a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-s-3-buckets-6-e-3-fe8"
+  },
+  "/-0e1": {
+    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
+    "__context": {
+      "plugin": "plugin---markdown-page-4-ff-8ed"
+    },
+    "config": "config---5-e-9-4f3"
+  }
+}

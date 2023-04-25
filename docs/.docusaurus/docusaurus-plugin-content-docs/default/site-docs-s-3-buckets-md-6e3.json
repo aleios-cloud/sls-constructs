@@ -1,0 +1,23 @@
+{
+  "unversionedId": "S3Buckets",
+  "id": "S3Buckets",
+  "title": "S3 Buckets",
+  "description": "For all the best practices we've checked for, the documentation can be found here: AWS Documentation for S3 Best Practices",
+  "source": "@site/docs/S3Buckets.md",
+  "sourceDirName": ".",
+  "slug": "/S3Buckets",
+  "permalink": "/docs/S3Buckets",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/S3Buckets.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What is this?",
+    "permalink": "/docs/intro"
+  }
+}
