@@ -10,23 +10,25 @@
     "destroy": "cdk destroy"
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "^2.4.0",
+    "@tsconfig/docusaurus": "^1.0.7",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.15.13",
-    "jest": "^29.4.2",
-    "ts-jest": "^29.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "aws-cdk": "2.69.0",
     "esbuild": "^0.17.17",
     "eslint": "^8.38.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4",
-    "prettier": "^2.8.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^4.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0"
+    "jest": "^29.4.2",
+    "prettier": "^2.8.1",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "aws-cdk-lib": "2.69.0",
