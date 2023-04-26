@@ -1,2 +1,2 @@
 export { getConfigOrDefaults } from './getConfigOrDefaults';
-export { validateAllowedProperty } from './validateAllowedProperty';
+export { validateAllowedProperties } from './validateAllowedProperties';
