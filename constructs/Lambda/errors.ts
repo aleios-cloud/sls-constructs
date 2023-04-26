@@ -36,4 +36,8 @@ export const errorMessages = {
   architecture: `Invalid architecture for Lambda function. Allowed architectures: ${allowedConfig.architectures.join(
     ', ',
   )}.`,
+  entry:
+    'You must provide an entry file for your Lambda function. This is the file that will be executed when your Lambda function is invoked.',
+  functionName:
+    'You must provide a name for your Lambda function. This will make it easier to identify your function in the AWS console.',
 };

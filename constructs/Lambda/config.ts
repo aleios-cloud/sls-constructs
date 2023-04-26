@@ -11,6 +11,11 @@ export const allowedConfig: AllowedLambdaConfig = {
   retryAttempts: [0, 1, 2],
 };
 
+export const requiredConfig: Partial<NodejsFunctionProps> = {
+  functionName: 'SomeLambdaName',
+  entry: 'some/entry/file.ts',
+};
+
 export const defaultConfig: NodejsFunctionProps = {
   runtime: Runtime.NODEJS_18_X,
   architecture: Architecture.ARM_64,

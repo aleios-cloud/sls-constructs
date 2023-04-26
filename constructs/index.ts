@@ -1,0 +1,1 @@
+export { AleiosLambda } from './Lambda';

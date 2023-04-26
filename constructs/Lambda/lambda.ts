@@ -4,8 +4,12 @@ import {
 } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
-import { getConfigOrDefaults, validateAllowedProperties } from '../helpers';
-import { allowedConfig, defaultConfig } from './config';
+import {
+  checkRequiredProperties,
+  getConfigOrDefaults,
+  validateAllowedProperties,
+} from '../helpers';
+import { allowedConfig, defaultConfig, requiredConfig } from './config';
 import {
   defaultWarningMessages,
   errorMessages,
@@ -14,6 +18,13 @@ import {
 
 export class AleiosLambda extends NodejsFunction {
   constructor(scope: Construct, id: string, props?: NodejsFunctionProps) {
+    checkRequiredProperties(
+      props,
+      requiredConfig,
+      LambdaConfigurationError,
+      errorMessages,
+    );
+
     const lambdaConfig = getConfigOrDefaults<NodejsFunctionProps>(
       props,
       defaultConfig,
@@ -29,13 +40,7 @@ export class AleiosLambda extends NodejsFunction {
 
     super(scope, id, {
       ...props,
-      runtime: lambdaConfig.runtime,
-      tracing: lambdaConfig.tracing,
-      architecture: lambdaConfig.architecture,
-      memorySize: lambdaConfig.memorySize,
-      timeout: lambdaConfig.timeout,
-      retryAttempts: lambdaConfig.retryAttempts,
-      deadLetterQueueEnabled: lambdaConfig.deadLetterQueueEnabled,
+      ...lambdaConfig,
     });
   }
 }
