@@ -27,39 +27,59 @@ const allowedConfig: AllowedLambdaConfig = {
   retryAttempts: [0, 1, 2],
 };
 
+const defaultWarningMessages = {
+  runtime:
+    'Consider using the default runtime for better compatibility and maintainability.',
+  architecture:
+    'In most cases, using the default architecture ARM64 is cheaper but with similar or better performance than X86_64. Only use X86_64 if you have packages which cannot run on ARM.',
+  tracing:
+    'Enabling tracing modes by default ensures a consistent level of observability across Lambda functions.',
+  deadLetterQueueEnabled:
+    'Enabling dead letter queues by default ensures that failed events are not lost.',
+};
+
 export class Lambda extends NodejsFunction {
   constructor(scope: Construct, id: string, props?: NodejsFunctionProps) {
     const lambdaConfig = getConfigOrDefaults<NodejsFunctionProps>(
       props,
       defaultConfig,
+      defaultWarningMessages,
     );
 
     validateAllowedProperty(
-      'Runtime',
       lambdaConfig.runtime,
       allowedConfig.runtimes,
       LambdaConfigurationError,
+      `Invalid runtime for Lambda function. Allowed runtimes: ${allowedConfig.runtimes.join(
+        ', ',
+      )}`,
     );
 
     validateAllowedProperty(
-      'RetryAttempts',
       lambdaConfig.retryAttempts,
       allowedConfig.retryAttempts,
       LambdaConfigurationError,
+      `Invalid retry attempts for Lambda function. Allowed retry attempts: ${allowedConfig.retryAttempts.join(
+        ', ',
+      )}. Restricting retry attempts helps prevent excessive retries that could lead to higher costs and longer execution times.`,
     );
 
     validateAllowedProperty(
-      'Tracing',
       lambdaConfig.tracing,
       allowedConfig.tracing,
       LambdaConfigurationError,
+      `Invalid tracing mode for Lambda function. Allowed tracing modes: ${allowedConfig.tracing.join(
+        ', ',
+      )}.`,
     );
 
     validateAllowedProperty(
-      'Architecture',
       lambdaConfig.architecture,
       allowedConfig.architectures,
       LambdaConfigurationError,
+      `Invalid architecture for Lambda function. Allowed architectures: ${allowedConfig.architectures.join(
+        ', ',
+      )}.`,
     );
 
     super(scope, id, {

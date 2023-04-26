@@ -1,16 +1,14 @@
 export const validateAllowedProperty = <PropertyType, ErrorType extends Error>(
-  propertyName: string,
-  property: PropertyType | undefined,
+  property: PropertyType,
   allowed: PropertyType[] | PropertyType,
   error: new (message: string) => ErrorType,
+  errorMessage: string,
 ): void => {
-  if (property != null && Array.isArray(allowed) && !allowed.includes(property))
-    throw new error(`${propertyName} restricted to ${allowed.join(', ')}`);
+  const isPropertyAllowed = Array.isArray(allowed)
+    ? allowed.includes(property)
+    : allowed === property;
 
-  if (property != null && !Array.isArray(allowed) && allowed !== property)
-    throw new error(
-      `${propertyName} must be set to ${
-        typeof allowed === 'string' ? allowed : JSON.stringify(allowed)
-      }`,
-    );
+  if (!isPropertyAllowed) {
+    throw new error(errorMessage);
+  }
 };
