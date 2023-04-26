@@ -18,9 +18,9 @@ export const defaultWarningMessages = {
   architecture:
     'In most cases, using the default architecture ARM64 is cheaper but with similar or better performance than X86_64. Only use X86_64 if you have packages which cannot run on ARM.',
   tracing:
-    'Enabling tracing modes by default ensures a consistent level of observability across Lambda functions.',
+    'You have disabled tracing. Enabling tracing modes by default ensures a consistent level of observability across Lambda functions.',
   deadLetterQueueEnabled:
-    'Enabling dead letter queues by default ensures that failed events are not lost.',
+    'You have disabled the dead letter queues. They are enabled by default to ensure that failed events are not lost.',
 };
 
 export const errorMessages = {
