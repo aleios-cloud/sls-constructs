@@ -1,4 +1,4 @@
-name: 🚛 PR CI
+name: 🚛 PR
 
 concurrency:
   group: ${{ github.ref }}
@@ -34,9 +34,3 @@ jobs:
 
     - name: 🧪 Run tests
       run: pnpm test
-
-    - name: 💫 Deploy Docs to GitHub Pages
-      run: |
-        cd docs
-        pnpm install --frozen-lockfile
-        pnpm deploy-gh-pages
