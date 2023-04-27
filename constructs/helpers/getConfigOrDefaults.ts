@@ -10,10 +10,19 @@ export const getConfigOrDefaults = <T extends object>(
     ...config,
   } as T;
 
+  const yellow = '\x1b[33m';
+  const reset = '\x1b[0m';
+
   (Object.entries(defaults) as Array<[keyof T, T[keyof T]]>).forEach(
     ([key, value]) => {
-      if (config[key] !== value && warningMessages[key] !== undefined) {
-        console.warn(warningMessages[key]);
+      if (
+        key in config &&
+        config[key] !== value &&
+        warningMessages[key] !== undefined
+      ) {
+        console.warn(
+          `${yellow}Warning:${warningMessages[key] as string}${reset}`,
+        );
       }
     },
   );
