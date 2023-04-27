@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Lambda
 
-The `AleiosLambda` construct extents the `NodejsFunction` construct: A Node.js Lambda function bundled using esbuild. See the [CDK docs here for more info](https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-lambda-nodejs.NodejsFunction.html).
+The `AleiosLambda` construct extends the `NodejsFunction` construct: A Node.js Lambda function bundled using esbuild. See the [CDK docs here for more info](https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-lambda-nodejs.NodejsFunction.html).
 
 ## Example Usage
 
@@ -21,13 +21,23 @@ new AleiosLambda(this, 'HelloWorldLambda', {
 new AleiosLambda(scope: Construct, id: string, props?: NodejsFunctionProps)
 ```
 
-## Props
-
-You can find a full list of the `NodejsFunctionProps` in the [CDK docs here](https://docs.aws.amazon.com/cdk/api/v1/docs/@aws-cdk_aws-lambda-nodejs.NodejsFunction.html#construct-props).
-
 ## Best Practise
 
 You can find a full list of the best practise checks in the [AWS docs here](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
+
+## Required Props
+
+### Function Name
+
+`functionName: string`
+
+The name of the Lambda function. The name must be unique within the region and account. The maximum length is 64 characters. The regex pattern used is [a-zA-Z0-9-_]+. This name helps identify the function later.
+
+### Entry
+
+`entry: string`
+
+The path to the entry file (JavaScript or TypeScript) that defines the function handler and other helper code. The path should be relative to the root directory (where the cdk.json file is). The entry file must export a function called handler by default. The name of the exported function can be modified with the `handler` prop.
 
 ## Prop Defaults
 
@@ -35,7 +45,7 @@ You can find a full list of the best practise checks in the [AWS docs here](http
 
 `Runtime.NODEJS_18_X`
 
-Use the latest supported version of Nodejs to insure best performance and security. Also this version of Nodejs for Lambda comes bundled with the v3 SDK for Javascript which has notable performance improvements over the v2 SDK.
+Use the latest supported version of Nodejs to insure best performance and security. Also this version of Nodejs for Lambda comes bundled with the v3 SDK for Javascript which has notable performance improvements over the v2 SDK. You can read about AWS Lambda runtimes [here](https://docs.aws.amazon.com/lambda/latest/operatorguide/runtimes-functions.html). Note this construct is only applicable for Nodejs runtimes.
 
 ### Architecture
 
@@ -47,13 +57,15 @@ AWS Lambda now supports ARM-based architecture, which provides better cost effic
 
 `Tracing.ACTIVE`
 
+Enable active tracing for your [Lambda functions using AWS X-Ray](https://docs.aws.amazon.com/lambda/latest/operatorguide/trace-requests.html). This provides valuable insights into your function's performance, helping you identify bottlenecks and improve your application's overall efficiency.
+
 ### Memory Size
-  
+
 `memorySize: 1024`
 
 Select an appropriate memory size for your Lambda function based on its requirements. Remember that memory size is directly related to CPU speed. Choose a higher memory size for compute-intensive tasks or to reduce execution time. Keep in mind that costs will increase with higher memory allocations. You can use [Lambda Power Tuning](https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html) to help you determine the optimal memory size for your function.
 
-### Timeout 
+### Timeout
 
 `Duration.seconds(20)`
 
@@ -71,18 +83,6 @@ Configure the number of retry attempts for your Lambda functions. AWS Lambda aut
 
 Enable a Dead Letter Queue (DLQ) for your Lambda functions to capture and store unprocessed events when all retries have been exhausted. This allows you to identify and diagnose failures and either reprocess or archive the failed events. Integrating a DLQ with your Lambda function ensures better visibility into your application's health and resilience.
 
-## Required Props
+## Other Props
 
-### Function Name
-
-`functionName: string`
-
-The name of the Lambda function. The name must be unique within the region and account. The maximum length is 64 characters. The regex pattern used is [a-zA-Z0-9-_]+. This name helps identify the function later.
-
-### Entry
-
-`entry: string`
-
-The path to the entry file (JavaScript or TypeScript) that defines the function handler and other helper code. The path should be relative to the root directory (where the cdk.json file is). The entry file must export a function called handler by default. The name of the exported function can be modified with the `handler`.
-
-
+You can find the full list of props for the underlying `NodejsFunction` construct and their defaults in the [CDK docs here](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs.NodejsFunction.html#construct-props).
