@@ -29,8 +29,14 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: 💫 Deploy Docs to GitHub Pages
+      - name: Install dependencies and build docs
         run: |
           cd docs
           pnpm install --frozen-lockfile
-          pnpm deploy-gh-pages
+          pnpm run build
+
+      - name: 💫 Deploy Docs to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build
