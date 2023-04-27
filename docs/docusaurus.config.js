@@ -9,8 +9,8 @@ const projectName = 'sls-constructs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'sls-constructs',
+  tagline: 'Docs for aleios constructs',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
@@ -58,17 +58,16 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'aleios Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'documentationSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
           {
             href: `https://github.com/${organizationName}/${projectName}`,
@@ -84,7 +83,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Documentation',
                 to: '/docs/intro',
               },
             ],
