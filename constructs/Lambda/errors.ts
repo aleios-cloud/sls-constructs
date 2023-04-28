@@ -31,7 +31,7 @@ export const defaultWarningMessages = {
 };
 
 export const errorMessages = {
-  runtime: `Invalid runtime for Lambda function. Allowed runtimes: ${allowedConfig.runtimes.join(
+  runtime: `Invalid runtime for Lambda function. Allowed runtimes: ${allowedConfig.runtime.join(
     ', ',
   )}. ${links.runtime}`,
   retryAttempts: `Invalid retry attempts for Lambda function. Allowed retry attempts: ${allowedConfig.retryAttempts.join(
@@ -42,7 +42,7 @@ export const errorMessages = {
   tracing: `Invalid tracing mode for Lambda function. Allowed tracing modes: ${allowedConfig.tracing.join(
     ', ',
   )}. ${links.tracing}`,
-  architecture: `Invalid architecture for Lambda function. Allowed architectures: ${allowedConfig.architectures.join(
+  architecture: `Invalid architecture for Lambda function. Allowed architectures: ${allowedConfig.architecture.join(
     ', ',
   )}. ${links.architecture}`,
   entry: `You must provide an entry file for your Lambda function. This is the file that will be executed when your Lambda function is invoked. ${links.entry}`,

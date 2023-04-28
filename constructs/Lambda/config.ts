@@ -5,8 +5,8 @@ import { NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { AllowedLambdaConfig } from './types';
 
 export const allowedConfig: AllowedLambdaConfig = {
-  runtimes: Object.values(Runtime) as Runtime[],
-  architectures: Object.values(Architecture) as Architecture[],
+  runtime: [Runtime.NODEJS_18_X],
+  architecture: Object.values(Architecture) as Architecture[],
   tracing: Object.values(Tracing) as Tracing[],
   retryAttempts: [0, 1, 2],
 };

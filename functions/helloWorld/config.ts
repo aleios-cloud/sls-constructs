@@ -1,3 +1,4 @@
+import { Runtime } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import { join } from 'path';
 
@@ -10,6 +11,7 @@ export class HelloWorld extends Construct {
     new AleiosLambda(this, 'HelloWorldLambda', {
       functionName: 'hello-world',
       entry: join(__dirname, 'handler.ts'),
+      runtime: Runtime.NODEJS_14_X,
     });
   }
 }
