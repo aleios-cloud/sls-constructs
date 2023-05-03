@@ -4,7 +4,7 @@ This repository is structured as follows:
 
 ### `.github/workflows`
 
-This manages the CI of this repository, right now just updating documentation when merging a branch into main.
+This manages the CI of this repository, right now just updating our [github page hosting documentation](https://aleios-cloud.github.io/sls-constructs/) when merging a branch into main.
 
 ### `bin`
 
@@ -25,6 +25,8 @@ This contains two sections:
 This directory contains documentation for developers to read while coding and when they encounter errors. Its intent is to share knowledge more consistently across a team, helping empower less experienced developers to be more autonomous.
 
 It follows the default structure created when you initialise a docusaurus page (we have removed the `blog` section), and all documentation is kept in the `docs` directory
+
+The latest version of the documentation can be found [here](https://aleios-cloud.github.io/sls-constructs/).
 
 ### `functions`
 
