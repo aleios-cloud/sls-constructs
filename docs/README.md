@@ -2,6 +2,8 @@
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
+The hosted site can be found [here](https://aleios-cloud.github.io/sls-constructs/)
+
 ### Installation
 
 ```
