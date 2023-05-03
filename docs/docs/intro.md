@@ -8,4 +8,4 @@ This [Docusaurus](https://docusaurus.io/) should help explain some of the best p
 
 ## Creating/Editing a Page
 
-Checking out the docs directory, you should see a bunch of markdown
+Checking out the repository, you can see markdown files in the `docs/docs` directory relating to different AWS Constructs (and this file!). To create a new page you can create a new `.md` file in that directory and follow the same structure as existing pages. To edit a page, eidt its corresponding `.md` file.
