@@ -2,13 +2,11 @@ import { Duration } from 'aws-cdk-lib';
 import { Architecture, Runtime, Tracing } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs';
 
-import { AllowedLambdaConfig } from './types';
-
-export const allowedConfig: AllowedLambdaConfig = {
+export const allowedConfig = {
   runtime: [Runtime.NODEJS_18_X],
-  architecture: Object.values(Architecture) as Architecture[],
-  tracing: Object.values(Tracing) as Tracing[],
-  retryAttempts: [0, 1, 2],
+  architecture: [Architecture.ARM_64, Architecture.X86_64],
+  tracing: [Tracing.ACTIVE] as const,
+  retryAttempts: [0, 1, 2] as const,
 };
 
 export const requiredConfig: Partial<NodejsFunctionProps> = {
