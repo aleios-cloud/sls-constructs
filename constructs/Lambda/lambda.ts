@@ -15,9 +15,10 @@ import {
   errorMessages,
   LambdaConfigurationError,
 } from './errors';
+import { AleiosLambdaProps } from './types';
 
 export class AleiosLambda extends NodejsFunction {
-  constructor(scope: Construct, id: string, props?: NodejsFunctionProps) {
+  constructor(scope: Construct, id: string, props: AleiosLambdaProps) {
     checkRequiredProperties(
       props,
       requiredConfig,
