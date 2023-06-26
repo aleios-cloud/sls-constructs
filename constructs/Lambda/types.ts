@@ -12,10 +12,12 @@ export interface RestrictedLambdaConfig {
 export interface RequiredLambdaConfig extends Partial<NodejsFunctionProps> {
   /**
    * Please look at https://aleios-cloud.github.io/sls-constructs/docs/Lambda#function-name for documentation
+   * @required true
    */
   functionName: string;
   /**
    * Please look at https://aleios-cloud.github.io/sls-constructs/docs/Lambda#entry for documentation
+   * @required true
    */
   entry: string;
 }
@@ -23,18 +25,22 @@ export interface RequiredLambdaConfig extends Partial<NodejsFunctionProps> {
 export interface AleiosLambdaProps extends RequiredLambdaConfig {
   /**
    * Please look at https://aleios-cloud.github.io/sls-constructs/docs/Lambda#runtime for documentation
+   * @default Runtime.NODEJS_18_X,
    */
   runtime?: RestrictedLambdaConfig['runtime'];
   /**
    * Please look at https://aleios-cloud.github.io/sls-constructs/docs/Lambda#architecture for documentation
+   * @default Architecture.ARM_64
    */
   architecture?: RestrictedLambdaConfig['architecture'];
   /**
    * Please look at https://aleios-cloud.github.io/sls-constructs/docs/Lambda#tracing for documentation
+   * @default Tracing.ACTIVE
    */
   tracing?: RestrictedLambdaConfig['tracing'];
   /**
    * Please look at https://aleios-cloud.github.io/sls-constructs/docs/Lambda#retry-attempts for documentation
+   * @default 2
    */
   retryAttempts?: RestrictedLambdaConfig['retryAttempts'];
 }
